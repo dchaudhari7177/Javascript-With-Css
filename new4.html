@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project</title>
+</head>
+<style>
+    * {
+        margin: 0;
+    }
+
+    header {
+        background-color: aqua;
+        height: 100px;
+
+        align-items: center;
+    }
+
+    header h1 {
+        animation: animate 5s ease-in infinite normal;
+        padding: 30px;
+        display: inline-block;
+    }
+
+    header ul {
+        display: inline-block;
+        text-decoration: black solid;
+        height: 100px;
+        width: 80px;
+        background-color: red;
+        align-items: center;
+    }
+
+    @keyframes animate {
+        0% {}
+
+        100% {
+            transform: translate(100vw);
+        }
+    }
+    .container {
+        height: 100%;
+        background-color: red;
+        color: white;
+    }
+</style>
+
+<body>
+    <header>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">contact</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+        <h1>Welcome To Dipak's Official Page </h1>
+    </header>
+    <div class="container">
+        <img src="goggle.jpg" alt="" width="33%" height="650vh">
+        <img src="dip11.jpg" alt="" width="33.33%" height="650vh">
+        <img src="abcde.jpg" alt="" width="33%" height="650vh">
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>Mouse Event</title>
+        <h2>Practical No.08: Create webpage to implement Form Events(Part-2).</h2>
+        <style>
+            .button{
+                padding: 15px 32px;
+                font-size: 16px;
+                background-color: skyblue;
+                border: 3px solid black;
+            }
+        </style>
+        <script>
+            function init()
+            {
+                var p1=document.getElementById("panel");
+                var text1=document.getElementById("text1");
+                var btn=document.getElementById("btn2");
+                btn.addEventListener("mousemove",MouseMove);
+                var btn1=document.getElementById("btn");
+                btn1.addEventListener("click",ClickChk);
+                btn1.addEventListener("dblclick",DblClick);
+                btn1.addEventListener("mousedown",MouseDown);
+                btn1.addEventListener("mouseup",MouseUp);
+                btn1.addEventListener("mouseover",MouseOver);
+                btn1.addEventListener("mouseout",MouseOut);
+            }
+            function ClickChk()
+            {
+                panel.innerHTML+="<b> Mouse is Clicked </b><br>";
+            }
+            function DblClick()
+            {
+                panel.innerHTML+="<b> Mouse has been double Clicked </b><br>";
+            }
+            function MouseDown()
+            {
+                panel.innerHTML+="<b> Mouse Down  </b><br>";
+            }
+            function MouseUp()
+            {
+                panel.innerHTML+="<b> Mouse Up </b><br>";
+            }
+            function MouseOver()
+            {
+                panel.innerHTML+="<b> Mouse over </b><br>";
+            }
+            function MouseOut()
+            {
+                panel.innerHTML+="<b> Mouse out </b><br>";
+            }
+            function MouseMove(e)
+            {
+                text1.value="";
+                text1.value+="Mouse Moved at X="+e.x+",Y="+e.y;
+            }
+        </script>
+    </head>
+    <body onload="init()">
+        <input type="button" class="button" id="btn2" value="Move Mouse Here and Click"><tb><br><br>
+        <input type="text" size="35" id="text1"><br><br>
+        <input type="button" class="button" id="btn" value="Click Here To See Performed Mouse Events"><br>
+        <h3>Mouse events performed are as follows:-</h3>
+        <p id="panel"></p>
+    </body>
+</html>

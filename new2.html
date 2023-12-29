@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transforms</title>
+</head>
+<style>
+    .container {
+        height: 800px;
+        background-color: aqua;
+    }
+    .box {
+        border: 2px solid black;
+        display: inline-block;
+
+    }
+    img{
+        width:500px;
+        height: 400px;
+        transition: width 2s ease-in-out, height 5s ease-in-out;
+
+    }
+</style> 
+<body>
+    <div class="container">
+        <div class="box">
+            <img id="myimg" src="abcde.jpg" alt width="300px">
+            <button id="btn">CLICK</button>
+        </div>
+
+    </div>
+</body>
+<script>
+    myimg.style.width = "700px";
+    myimg.style.height = "80px";
+
+    btn.addEventListener("click", ()=>{
+        myimg.style.height = "1000px";
+        if(myimg.style.width === '500px'){
+        myimg.style.width="700px";
+        myimg.style.height = "800px";
+        }
+
+         else if(myimg.style.width === '700px')
+        {myimg.style.width="500px";
+        myimg.style.height = "800px";
+    }
+    }
+    )
+
+</script>
+
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse&Keyevents</title>
+</head>
+<body>
+    <input type="button" value="down" id="btn1" onmousedown="down()" >
+    <input type="button" value="enter" id="btn2" onmouseenter="enter()">
+    <input type="button" value="over" id="btn3" onmouseover="over()">
+    <input type="button" value="up" id="btn4" onmouseup="up()">
+    <input type="button" value="move" id="btn5" onmousemove="move()">
+    <input type="button" value="out" id="btn6" onmouseout="out()">
+    
+</body>
+<script>
+    function down(){
+        document.getElementById("btn1").style.backgroundColor="red";
+    }
+    function enter(){
+        document.getElementById("btn2").style.backgroundColor="blue";
+    }
+    function over(){
+        document.getElementById("btn3").style.backgroundColor="yellow";
+    }
+    function up(){
+        document.getElementById("btn4").style.backgroundColor="aqua";
+    }
+    function move(){
+        document.getElementById("btn5").style.backgroundColor="orange";
+    }
+    function out(){
+      alert(event.clientX);
+    }
+</script>
+</html>

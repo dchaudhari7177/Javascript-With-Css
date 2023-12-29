@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function updateList(value){
+        with(document.forms.myform){
+            if(value ==1){
+                optionList[0].text = "Mango";
+               
+                optionList[1].text = "Banana";
+                
+                optionList[2].text = "Apple";
+                
+            }
+            if(value ==2){
+                optionList[0].text = "Potato";
+                
+                optionList[1].text = "Cabbage";
+                
+                optionList[2].text = "Onion";
+                
+            }
+        }
+    }
+</script>
+<body>
+    <form name="myform" action="" method="post">
+    <select name="optionList" size="2">
+        <option value="1">Mango</option>
+        <option value="2">Banana</option>
+        <option value="3">Apple</option>
+    </select>
+    <input type="radio" value="1" checked="true" onclick="updateList(this.value)">Fruits
+    <input type="radio" value="2" onclick="updateList(this.value)">Vegetables
+</form>
+</body>
+</html>

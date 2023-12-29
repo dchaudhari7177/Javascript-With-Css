@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img\logo\Garcia Tavern-logos.jpeg" />
+    <script src="./js/anime.min.js"></script>    
+    <script src="js/intro.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <title>Saurabh's Meal </title>
+</head>
+<style>
+	root {
+
+    --font: slategrey;
+    --background: wheat;
+    --menuColor: slategrey;
+}
+
+
+
+body {
+    width: auto;
+    background-image: url('https://images.unsplash.com/photo-1606625736768-f521ab7e23fb?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=jeswin-thomas-PtfRiBumfQU-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    background-color: wheat;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* nav bar styling */
+
+.navBar {
+    margin-bottom: 20px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.541);
+}
+
+.navBar a {
+    text-decoration: none;
+    color: white;
+}
+
+img {
+    margin: 10px;
+}
+
+i {
+    font-size: 20px;
+}
+
+i:hover,
+a:hover {
+    color: dodgerblue;
+    cursor: pointer;
+}
+
+.navBar nav li {
+    padding: 10px;
+    margin: 20px;
+    list-style-type: none;
+    display: inline-block;
+}
+
+
+#hamMenu {
+    visibility: hidden;
+}
+
+/*  grid system for the webpage */
+
+.header {
+    width: 80%;
+    height: auto;
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    display: grid;
+    grid-template-rows: 1fr;
+}
+
+.header>div {
+    margin-top: 10%;
+    max-width: 100%;
+
+}
+
+.IntroMsg {
+    margin: 20px;
+    position: relative;
+    width: 100%;
+    left: 5%;
+    top: -20%;
+    text-align: center;
+    padding: 10px;
+    height: auto;
+    opacity: 0.9;
+    background-color: transparent;
+    border-radius: 10px;
+
+}
+
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+/* for image seperation */
+
+
+.story {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.imgContainer {
+    width: 90%;
+    height: fit-content;
+    position: relative;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    color: white;
+
+
+}
+
+.imgContainer>div {
+    margin: 10px;
+}
+
+.menuIntro>img {
+    width: 75%;
+    border-radius: 10%;
+    height: auto;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    filter: blur(0.5px);
+}
+
+.menuIntro {
+    text-align: center;
+    color: rgb(39, 39, 39);
+    border-radius: 10px;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    width: 100%;
+    left: 0%;
+    text-align: center;
+    padding: 20px;
+    opacity: 0.9;
+    background-color: rgba(100, 98, 98, 0.288);
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .menu,
+    .form {
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+        position: relative;
+        top: -5%;
+
+    }
+
+    .logo {
+        width: 200px;
+        height: 200px;
+    }
+
+    html {
+        font-size: 12px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    h2,
+    h1 {
+        font-size: 18px;
+    }
+
+    .navBar,
+    .navBar nav li {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }  
+
+    #hamMenu {
+        visibility: visible;
+        color: white;
+        font-size: 25px;    
+        z-index: -1;
+    }
+
+}
+
+
+.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    position: relative;
+    width: 100%;
+    left: 0%;
+    top: 40px;
+    text-align: center;
+    padding: 20px;
+    opacity: 0.9;
+    background-color: rgba(100, 98, 98, 0.288);
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.form input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 80%;
+    opacity: 0.9;
+    margin: 10px;
+
+}
+
+.form span {
+    margin: 10px;
+}
+
+.form button {
+    width: 60%;
+    position: relative;
+    left: 2%;
+    margin: 5px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-shadow: 0.5px 0.5px black;
+    background-color: rgb(109, 103, 93);
+    padding: 10px;
+}
+
+.form button:hover {
+    cursor: pointer;
+    box-shadow: 0px 3px 6px slategray;
+}
+
+.form button:active {
+    background-color: rgba(30, 96, 161, 0.801);
+    border: none;
+}
+
+#home-menu ul {
+    background-color: white;
+    border-radius: 5px;
+    list-style: none;
+    padding: 30px;
+}
+
+#home-menu h2 {
+    text-shadow: 0.5px 0.5px black;
+}
+
+#home-menu ul:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+#home-menu li {
+    float: left;
+    width: 50%;
+    padding: 0;
+    margin: 20px 0 20px 8%;
+    border-bottom: 1px solid slategray;
+}
+.dish {
+    float: left;
+    color: #555;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+    padding-right: 15px;
+}
+
+.Price {
+    float: right;
+    color: #555;
+    font-weight: bold;
+    position: relative;
+    background-color: transparent;
+    padding-left: 15px;
+}
+
+.Description {
+    clear: both;
+    display: block;
+    color: #999;
+    font-style: italic;
+    font-size: 14px;
+    padding-top: 10px;
+    position: relative;
+    top: -8px;
+}
+
+
+.logo {
+    animation: windowsFly ease-out 3s;
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 4px rgb(255, 255, 255), 0.3em 0.3em 4em rgba(0, 0, 0, 0.3);
+}
+
+/*  image animation for resturant*/
+
+@keyframes windowsFly {
+    0% {
+        filter: blur(10px);
+        opacity: 0;
+        width: 0px;
+
+    }
+
+    50% {
+        filter: blur(5px);
+        opacity: 0.5;
+        width: 50%;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+  .dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 31px 31px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+  
+ 
+</style>
+<body>
+
+    <!--  animated nav bar -->
+     <div class="navBar" id="nv">
+        <nav>
+            <i class="bi bi-justify" onclick="alert('heelo')" id="hamMenu"></i>
+            <ul>
+                <!-- main nav section -->
+                <li><a href='?page=home'>HOME </a></li>
+              <div class="dropdown">
+    <button class="dropbtn">MENU
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#drink">Drink</a>
+      <a href="#Food">Food</a>
+      <a href="#Desert">Desert</a>
+    </div>
+  </div>
+                <li><a href='?page=ourstory'>OUR STORY  </a></li>
+                <li><a href='#'>LOGIN </a></li>
+               <li><a href='?page=menu'>SIGNUP</a></li>
+                <li><a href='?page=contactus'>CONTACT US </a></li>
+                <!-- icons social and phone -->
+                <li class="socialIcon"><a href="call:111-111-111"><i class="bi bi-telephone-forward"></i></a></li>
+                <li class="socialIcon"><a href="instgram.com/example"><i class="bi bi-instagram"></i></a></li>
+                <li class="socialIcon"><a href="mailto:example@example.com"><i class="bi bi-envelope-fill"></i></a></li>
+            </ul>
+        </nav>
+    </div>  
+    
+    <div class="header">
+
+       
+         
+    <!-- main logo !-->
+	<div class="IntroMsg">
+    <img  alt="Garcia Taverns where food meets passion" 
+    class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABKVBMVEX///9xKFwAAADr6+u5ubn09/UAeCNvI1n49PdtHVeHUHaheJVuIFispavt5OtrGlVoD1GsiqFlAE317/OPYICdcpCwi6Xe3t6XZ4nh1d7QvMp2dnZwHFoAbwDXxdJ8fHwAdBgZGRmDQ3B4M2XAobfHUwD68ev359vf7+TOzs5ubm45OTnY2NgnJyeZmZnDQgDIVgD14dTqxLDs9u/A3MjNaS9fAEVFRUWlpaWHh4fXiFbz2cfhpoLQd0vPcT/lspE2iUefzKyDs43Grb4ZhThaWlrx0r7MZSTUg1jhqY/blWrcmnnnuqDObDfLYBDBOQDbj1nQcCdQl1/js5/F383XhUmBtI2tzrZiqHUyiUV6r4VLml4/mFiUwJ+lz7Hkq4QAYgB/RWxRUVGaL4uZAAAKp0lEQVR4nO2aCVvaSheAQ1gCwgcoLqCArMFdAddi1RbcqHpb61qrt/X//4jvnDMJhM1GG0rJPe/zVMYhwXkzZ84sVJIYhmEYhmEYhmEYhmEYhmEYhmEYhmEYhmEYhmEYhmEYhmEYhmEYhmH+wxypg25Bv3lXGHQL+ox6bHfD/fzRoJvQZ07yu4NuQn+pHOcv7B2mp8fX+XeDbkQ/UffOzvKrxUE3o48UV4uFfP69jafE+p4q7ebznwbdjv6RP8VIza+dDboh/aJCk2FhNZ+361CsixEIU8aGPRUL59oArGzkT2yZbUqrFa0ECbU+0Kb0B/enfKNcOF/dH2BT+oR6YViSFjeOK70vHVKaQYoU/3lnu6H4pXUtc7Zqt4lfXT1traiv2myXsb/WtvctHNusE99rQdrsuNKarZJNRcukBUNorn0dUGP6wlctk54Z1mulcxulU3VvTRQ+GwzVCxstT4vaCZT72thtpzbaRu1qZxeVE2NtyUar07y2gtlvMSza52ixok/39ZZeK9gnShvT/UlLr6n2yTQne1qCeW+fuGyhsKEFp7pnU8PKhbbfLWzY1LCkbyOKdltt63z9Rys0wtVunK5qBXXv5MULh5bTL3qpkVRtxu61Xqrb1PD0s14qHb9tkl+//GBZayxFVSmJfm0YSmult3zObSJVu7KoTVaiVkpFCspSI0ql0muWoldP6/Tq9ng8qVtL22YJR59L2qA7+tKsfc049KQ8j/j6IQGGjxY2zRLUer0ho16/dGVP5kAscQOFu9RfaFh8Zzwe3X3T0Wg5gdEJ4+8ypUdpeW7Okub9PsXjloxSedv/E0qh4R31YeoA1Mo3D/cHT5Y08HepXBiPQktF6W1zxA12YkKSHhOeBMwW66kEqpataeNvoZ4bM2bpzbN8+QB6MTEHAzL1HYYldin16eCpG7+EOV19+zLmqga9BwPwu+dK5BuP58ffMBCP8s0YVb90HPt6/Y5s1hH1GqqCI9lsVpk0XuUuYzS6v91jfF6B4Dr1oMfCYRhJakzTz5jpG9WN5ibw7OK0owe9EyFF8Y23GgYUJTTarHLffnu4/IjLmLlHMetLHxMwDC/XX+3Rmyo8aXzW1TC+Bqqmb9zV90owZVx3+fLF6/c5HIE2Q8XhCI02K25SSO2mWVN+uL+7ubIyy0Si0A6Hkg1KyaziaH3kL3K2qk0N6tlu1xRqxvA7jTlPokZK5Tn3Gwx+RRC88K9CQ6phR9h0F1Ya3+0WemQYM4ZXNaGYuofEcnXveRSKc7e31i3AY2EQdIjgHPGFzd5W2NjoKmbQNWOIWRTCNJG6KdMIrGEGfbq793hq36yK1FwIDbNJakA8Z/Ku4sZatwWa+q9hUWPKEJbbd5ffxH7iNpW4LEvl74mUiFyLunESDZUMpVBvNWLupsLGccf6TC2UPtWNA9KkYZPy00fswqt7LXJr5hrzK4yGZinu7ZGKWgGOjs7O9nf/re9dXJdaAvc1hnPrH5oz/NwD9WLqhzVxKgxFlJpDrV+c7325OAY2gPPz9+9PTk72O+YL04ZzD6lEIiEM3XOo9XRQ89QOLNpH5SjTOKbN36FWioVisVjQUHst1swaPnpw03TnBjswTNzhoCyvr69btWxLkmHIbIp5BWYzjVhog9etB36F1Hpn7ZJUzIdKJmjppyLmDMs/xE7CLV15ErAYrWGKsVTRO+GjTvRb+aHik00Z3lBSQaeDlLYL9qQuLW1IlSZER/gVI9Ec5gw//IAs8wCCTwna4D/SbtjSToyMB9BQeU2yMYXJcbj++IH2T3hIA5N8uYaG1h5HTY9RJyoZixU1Q2PVCzM+LErJUHrEML3pdsnbiYo4DTjap/2gySUO2OiFSDNjkaEyYvwMMvR1NVzHFIPHUO472CBabOgdCQjFrK4YGQnH42OOydxYHF6xNhjHUg53W/jWBF41OUaV+K+q1cf94pbppmEULwpHIw1D5WeWqrItjbiqaYemMDS/W34KFcsopOgbj+iGgYBjNCYmyzAZKoqYNSNReBw+YRhCA9hzBUaCWK/4/DEpOKanLRGl/gg9P5HIRJTmYg78e2MtO7UypFKPJla2/pgttikUQ1HNcDxEiWcaDeNkqK8LOgy9WSVM9SFfFYI11mY4LsZ5YKRpOCqeXGsSkm5+pPr5pUzSIRS15xoZEWMy2TTM9jDMRJIUb5FonNa2HYZeiTpRxLqeaUZ9nYthS48uOqlmxVAUiSGo5dVpE4bBSLZKD0U8nC6GyZC+LtQMvdI0DQrzZ0JWMClW4AqpRbSJw5ShRLvKyLS3l2EQhznd0jCkkd9zo9gnxMQf8hsHh5kobVvQdjH0TlJSDRoMI+Mo3fK3+k/MuAQPxpAkHXG8nGkahtot1XCHIZ2UKD9jBkMvPs9A1PR8awleP0385BPJINkRbKPJPoxExS20zG0zrAa0Y4TBGkrTFKZ0nugPK4oSHhUHcZohtm2yt2FuTNwS6YzSbobRQRgmKZ2ihRSneG3JNJlfGOITwFvaZ3wy9A04SoNisSZWNmghskW1w9Dn72lIXYdR3M1wNNSeaf6w4YSYBJuGlC3iQaMhbZQVsTrrZijWd8muhrRuC+ByaUCG3rg4y9eiNNfVkPoBD47fYBgL6NE/IMNcWPHhxFT16Xv9pJ7xDYaUh2CO7mEY1AO7iyGdk4wlB2aIf9UXbRzYOLDF4Y5MA6GmUNn7UqbJdjEUo1rJ6n/rzxtiKncoOUlsaQK0gZqgSS0nJccahlIVy74RCdvdbbagfh/1elsNfRNe+vpODIQgjsg/PVtEMptjQDgXpddNOjiNxbE8NjGJdZuaA1246R/Bn7TL8mNFVns3mBG3TNNVGJLeCSxmJuhjMyQT+YllXI6Ow3ub43/A0On6XxuueRfQWkXMd9QZ321/e769hj628bmt976BJbOGbqfT3YYT6azpUtfybpdbunxIo9x67+vpx5fFDPMfBobjlJsGFhSgpFU73VM4XOkKLGtFuGbYRuGULC/MyFtuaSoty9vbsixT9YIsP88vQw2V01g/L0lLsry1TaUhAgxn3c8r5AQ6O7K8A7XzafnQKYHiIvTpjJx2usDYKYHdijRzOOg2vw40hJCUnLK8CL86n+XFKckNUthRK2QNv0yhukv8cE4Nus2vgwyBWVmmlrtQCipn6F0KWjJcWpQXNOMhQzN0P2MU4u+LIOfCvkJm0JsMIYqXnfOyfDhcaUZqGILYrGj7IaQd6FDxC6kKQ4jQKefiEHYiGi4tbi8tQw4hZqCvDrWMislzRTPcRlkwHjpFnC1m5e35XxqKyF2Rh22yEFHqmodEohkuwAyxoBvOY5c1+nBeEhOls+en/Y1o49C5JS9Qw7Hghp4S+yMqCEMt2boPhy1O9dkCFi5kCHP9CnbdDr272JgtnHqydenvDQu6oUsWYbojp13YkaSDg1QzFO/D6hRG7MJQzRi6oQSLUCcNPHDSfZ8pMnHVBrPJMgTuyhYazgyboVi+gNTWEsQojTaISXnFOSsCEgLYtUDK0LeuFVnPSUPC1HJaDCv3QlregalCrKtd6fQy/FvE9LmT3pqVl9NQWkqnnw9FJcMwDMMwDMMwDMMwDMMwDMMwDMMwDMMwDMMwDMMwDMMwDMMwDMMwzBDwfyQGVt98wGdmAAAAAElFTkSuQmCC" id="introLogo" width="200" height="200" />
+    </div>
+        <!-- subject-->
+	<div class='IntroMsg'>
+        <h1> Stunning food, Amazing Quaility  </h1>
+    </br>
+        <span>
+           Let us host your next special occassion
+        </span>
+        <h2>
+       <a href="call:111-111-111" style="text-decoration: none; color: white;"> <i class="bi bi-telephone-forward-fill"> <span> Contact US today </span></i></a>
+       
+        </h2>
+	</div>
+        <!-- review name-->
+
+        <!-- title system for content-->
+  
+     <div class="menu" id="drink">   
+        <div class="menuIntro">     
+            <!-- img tile system -->
+            <img src="https://i.ibb.co/QCxY7FT/michael-discenza-Mxfcoxyc-H-Y-unsplash.jpg"/>
+            <img src="https://i.ibb.co/cNrYC6S/izabela-rutkowski-Nme6-Tb-Wu-Vp-A-unsplash.jpg" />
+        </div>
+            
+    <!-- menu layout-->
+        <section id="home-menu">
+            <h2>DRINK MENU</h2>
+			<h3> Sprits, wine, and beer</h3>
+	<ul>
+		<li>
+			<span class="dish">Vodka 1ng</span>
+			<span class="Price">&#8377; 120/-</span>
+			<span class="Description">VODKA le Bhai,,100 Saal Zindagi Tere Ko</span>
+		</li>
+		<li>
+			<span class="dish">Rum ng</span>
+			<span class="Price">&#8377; 110/-</span>
+			<span class="Description">RUM Pio Aur Aasman Mei ghumne ka Anand Pao</span>
+		</li>
+		<li>
+			<span class="dish">Whisky 1ng</span>
+			<span class="Price">&#8377; 190/-</span>
+			<span class="Description">Whisky Lo,,Aur Saari Raat Jor Se Kam Kro</span>
+		</li>
+		<li>
+			<span class="dish">Desi 1ng</span>
+			<span class="Price">&#8377; 30/-</span>
+			<span class="Description">Le Bhai Apna India Ka Original Swaad</span>
+		</li>
+		<li>
+			<span class="dish">Red wine </span>
+			<span class="Price">&#8377; 440/-</span>
+			<span class="Description">le wine,,10 flavours me available </span>
+		</li>
+		<li>
+			<span class="dish">White wine.</span>
+			<span class="Price">&#8377; 220/-</span>
+			<span class="Description">Kuch Naya Ho Jaaye.</span>
+		</li>
+		<li>
+			<span class="dish">Sparkling wine .</span>
+			<span class="Price">&#8377; 160/-</span>
+			<span class="Description">le Sasti wali wine</span>
+		</li>
+		<li>
+			<span class="dish">Domestic and foreign beer .</span>
+			<span class="Price">&#8377; 110/- To &#8377; 460/-</span>
+			<span class="Description">Bina Alcohol Wali beer Bhi le le bhai</span>
+		</li>
+	</ul>
+    </section>
+    <!-- end of menu layout -->
+    </div>
+
+    <div class="menu" id="Food">   
+        <div class="menuIntro">    
+            <img  id="caption_img"src="https://i.ibb.co/9g9yg5G/chad-montano-l-P5-MCM6n-Z5-A-unsplash.jpg"  />  
+            <img id="caption_img" src="https://i.ibb.co/q1HKkyL/ella-olsson-4d-Qia-WKi-L-Y-unsplash.jpg" />
+        </div>
+ 
+     <section id="home-menu">
+            <h2>FOOD MENU</h2>
+			<h3> Entrees, mains, and handhelds</h3>
+	<ul>
+		<li>
+			<span class="dish">Pizza</span>
+			<span class="Price">&#8377; 120/-</span>
+			<span class="Description">cheese, onions, tomotoes. 
+			</span>
+		</li>
+		<li>
+			<span class="dish">Burgers.</span>
+			<span class="Price">&#8377; 70/-</span>
+			<span class="Description">chicken or Veg Both Are Available</span>
+		</li>
+		<li>
+			<span class="dish">Chicken rice.</span>
+			<span class="Price">&#8377; 90/-</span>
+			<span class="Description">
+				brown rice, and veggies, with choice or sauce 
+			</span>
+		</li>
+		<li>
+			<span class="dish">chicken chilli</span>
+			<span class="Price">&#8377; 110/-</span>
+			<span class="Description">
+				Juicy grilled chicken with choice of sauce.
+			</span>
+		</li>
+		<li>
+			<span class="dish">Fingerchips.</span>
+			<span class="Price">&#8377; 45/-</span>
+			<span class="Description">Crunchy and Tasty with choice of Sauce</span>
+		</li>
+		<li>
+			<span class="dish">Oamlate.</span>
+			<span class="Price">40/-</span>
+			<span class="Description">Pure White Egg wala.</span>
+		</li>
+		
+	</ul></section></div>
+
+
+    <div class="menu" id="Desert">   
+        <div class="menuIntro">    
+             <img src="https://i.ibb.co/GJ0Q03Q/camille-paralisan-rq-NIBr-DGnh4-unsplash.jpg" />
+             <img src="https://i.ibb.co/rsxRJMX/oscar-nord-5-CPn8-NE2-Tc-unsplash.jpg" />
+        </div>
+     <section id="home-menu">
+            <h2>DESERT MENU</h2>
+			<h3> Deserts and sweets</h3>
+	<ul>
+		<li>
+			<span class="dish">Chocolate cake .</span>
+			<span class="Price">&#8377; 400/-</span>
+			<span class="Description">Loaded Chocolate cake </span>
+		</li>
+		<li>
+			<span class="dish"> cheesecake.</span>
+			<span class="Price">&#8377; 350/-</span>
+			<span class="Description"> cheesecake toped with strawberry Cream </span>
+		</li>
+		<li>
+			<span class="dish">Apple pie.</span>
+			<span class="Price">&#8377; 570/-</span>
+			<span class="Description">apple Flavoured with icecream.</span>
+		</li>
+		<li>
+			<span class="dish">BlackForest.</span>
+			<span class="Price">&#8377; 360/-</span>
+			<span class="Description">Special Famous BlackForest</span>
+		</li>
+		<li>
+			<span class="dish">WhiteForest</span>
+			<span class="Price">&#8377; 350/-</span>
+			<span class="Description">Special Famous WhiteForest</span>
+		</li>
+		<li>
+			<span class="dish">Creamy Caramel Flan.</span>
+			<span class="Price">&#8377; 300/-</span>
+			<span class="Description">A Small Slice For Family
+				way.</span>
+		</li>
+		<li>
+			<span class="dish">Shortcut Tres Leches Cake</span>
+			<span class="Price">&#8377; 400/-</span>
+			<span class="Description">Couple Love </span>
+		</li>
+		<li>
+			<span class="dish">SSCDesert</span>
+			<span class="Price">&#8377; 290/-</span>
+			<span class="Description">Silky, Smooth, Crunchy Desert </span>
+		</li>
+	</ul></section></div></div>
+
+
+   <!-- coded by cryptograghi 2021  aka oliver shwaba  :) -->
+
+</body>
+</html>

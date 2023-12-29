@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations</title>
+</head>
+<style>
+    .container {
+        background-color: aqua;
+        height: 100vh;
+        width: 50wh;
+    }
+
+    .box {
+        background-color: red;
+        color: white;
+        width: 300px;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation-name: WidthAnimate;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: ease-in-out;
+
+    }
+    @keyframes WidthAnimate {
+        from{
+            width:300px;
+            height: 300px;
+        }
+        to{
+            width: 100vw;
+            height: 100vw;
+        }
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="box">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos facere totam, aut optio aliquam laboriosam
+            quibusdam cumque inventore nulla magnam aperiam illum fugiat quae magni ea obcaecati enim sint debitis
+            laudantium consequatur, accusantium quia atque? Commodi dicta voluptate adipisci eveniet aperiam officiis
+            possimus accusantium, quaerat voluptates, similique nostrum harum dolore.
+        </div>
+    </div>
+   
+</body>
+
+</html>

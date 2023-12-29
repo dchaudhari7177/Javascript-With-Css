@@ -1,0 +1,24 @@
+<html>
+ <body>
+ <button onclick="openWin()">Open "myWindow"</button>
+ <button onclick="moveRight()">Move right "myWindow"</button>
+ <button onclick="moveLeft()">Move left "myWindow"</button>
+ </body>
+
+ <script>
+ var myWindow;
+ function openWin() {
+ myWindow = window.open("", "myWindow", "width=200, height=100");
+ myWindow.document.write("<p>This is 'myWindow'</p>");
+ }
+ function moveRight() {
+ myWindow.moveBy(50, 0);
+ myWindow.focus();
+ }
+ function moveLeft() {
+ myWindow.moveBy(-50, 0);
+ myWindow.focus();
+ }
+ </script>
+</body>
+</html>

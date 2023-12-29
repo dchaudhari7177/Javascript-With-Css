@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grids</title>
+</head>
+<style>
+    .container {
+        display: grid;
+        background-color: yellow;
+        grid-gap: 15px;
+        grid-template-columns: auto auto auto;
+        height: 50vh;
+    }
+
+    .abc {
+        background-color: rgb(30, 171, 17);
+        border: 2px solid black;
+        width: 20vh;
+        grid-column: 1/3;
+        grid-row: 1/ span 3;
+    }
+
+    .cba {
+        background-color: red;
+        border: 2px solid black;
+
+
+    }
+
+    .xyz {
+        background-color: rgb(132, 142, 56);
+        border: 2px solid black;
+    }
+
+    .zyx {
+        background-color: rgb(9, 23, 8);
+        color: white;
+        border: 2px solid black;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="abc">
+            <ul>
+                <li><a href="abcde.jpg">Home</a></li>
+                <li><a href="friends.html">About</a></li>
+                <li><a href="group.jpg">Contact</a></li>
+            </ul>
+
+        </div>
+        <div class="cba">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit necessitatibus ipsam repudiandae. Itaque
+            libero ab, ad qui eius ducimus vero quasi voluptate molestias est repudiandae iure vitae dolorem aliquam
+            soluta eligendi atque dignissimos obcaecati.
+        </div>
+        <div class="xyz">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, molestiae modi! Excepturi nulla impedit
+            delectus, blanditiis odio doloribus vel, ex quaerat beatae vitae, adipisci amet dicta. Ullam aut maxime
+            voluptate mollitia tempora, amet similique?
+        </div>
+        <div class="zyx">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo ullam consequuntur veniam fugit praesentium,
+            saepe quasi dignissimos est? Tempora, dolorem delectus quo reprehenderit adipisci repellat? Recusandae,
+            nulla vel. Neque similique esse voluptatum nulla minima!
+        </div>
+    </div>
+</body>
+
+</html>
